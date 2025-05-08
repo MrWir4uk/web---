@@ -1,0 +1,28 @@
+-- database: ./blog.db
+DROP TABLE articles;
+
+CREATE TABLE articles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    text TEXT,
+    author TEXT NOT NULL,
+    image TEXT,
+    created TEXT DEFAULT CURRENT_TIMESTAMP, 
+    category_id INTEGER REFERENCES categories(id)
+);
+
+
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL
+);
+
+CREATE TABLE comments(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    author TEXT NOT NULL,
+    text TEXT,
+    created TEXT DEFAULT CURRENT_TIMESTAMP, 
+    article_id INTEGER REFERENCES articles(id)
+);
+-- ВИдалення таблиці (НЕ ВИКОНУВАТИ ПРОСТО ТАК!!!)
+DROP TABLE articles;

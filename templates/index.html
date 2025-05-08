@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="my-5 text-center">Inforcimaya about games</h1>
+    {% for genre_id, genre in genres %}
+    <div class="card text-center">
+        <div class="card-header">
+         
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{genre}}</h5>
+          
+          <a href="{{url_for('genre_page',genre_id=genre_id)}}" class="btn btn-primary">Відкрити</a>
+        </div>
+      </div>
+    {% endfor %}
+   
+{% endblock content %}

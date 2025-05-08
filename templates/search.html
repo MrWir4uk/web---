@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for article in articles %}
+<div class="card" style="width: 18rem;">
+    {% if article[4] %}
+        <img src="{{ url_for('static', filename=article[4])}}" class="card-img-top" alt="...">
+    {% endif %}
+  <div class="card-body">
+    <h5 class="card-title">{{article[1]}}</h5>
+    <p class="card-text">{{article[3]}}</p>
+    <a href="{{ url_for('article_page', article_id=article[0]) }}" class="btn btn-light">Читати</a>
+  </div>
+</div>
+{% endfor %}
+   
+{% endblock content %}

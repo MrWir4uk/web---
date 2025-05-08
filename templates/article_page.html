@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="card-title my-4 text-center">{{article[1]}}</h3>
+
+{% if article[4] %}
+                <img src="{{ url_for('static', filename=article[4])}}" class="card-img-top" alt="...">
+            {% endif %}
+<p class="card-text">{{article[2]}}</p>
+
+
+<p class="card-text">{{article[3]}}</p>
+
+{% endblock content %}
