@@ -9,44 +9,13 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<div id="rockstar-banner" class="rockstar-banner text-decoration-none d-none">
-    <a href="https://friend-rockstar-site.com" target="_blank" class="d-flex align-items-center gap-2 text-dark">
-        <img src="{{ url_for('static', filename='img/rockstar_logo.png') }}" width="24" height="24" alt="Rockstar">
-        <span>🔥 Заціни сайт про ігри Rockstar!</span>
-    </a>
-</div>
-
-<script>
-    const banner = document.getElementById('rockstar-banner');
-
-    function toggleBanner(show) {
-        if (show) {
-            banner.classList.remove('d-none');
-        } else {
-            banner.classList.add('d-none');
-        }
-    }
-
-    // Спочатку приховано, з'явиться через 5 хвилин
-    setTimeout(() => toggleBanner(true), 5 * 60 * 1000);
-
-    // Цикл появи/зникнення кожні 5 хв
-    setInterval(() => {
-        banner.classList.toggle('d-none');
-    }, 5 * 60 * 1000);
-</script>
-
-
 <body data-bs-theme="dark">
 
-
-
-    
     <!-- Навігація -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="{{ url_for('index') }}">
-                <img src="{{ url_for('static', filename='img/,workstation_3967703.png')}}" width="30" height="30">
+                <img src="{{ url_for('static', filename='img/workstation_3967703.png') }}" width="30" height="30" alt="Логотип">
                 <span>Games Info</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
@@ -65,7 +34,12 @@
                             {% endfor %}
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">Про автора</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">Про автора</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="badge bg-warning text-dark ms-2 mt-1" href="https://rockstar-games-friend-site.com" target="_blank">Реклама: Rockstar</a>
+                    </li>
                 </ul>
 
                 <form action="{{ url_for('search') }}" class="d-flex" role="search">
@@ -85,8 +59,6 @@
         </div>
     </section>
 
-
-
     <!-- Контент -->
     <main class="container" id="latest">
         {% block content %}{% endblock %}
@@ -101,9 +73,8 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p><strong>Telegram:</strong> <a href="https://t.me/твій_нік" target="_blank" class="text-info">@твій_нік</a></p>
-                    <p><strong>Instagram:</strong> <a href="https://instagram.com/твій_нік" target="_blank" class="text-info">@твій_нік</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:НЕ ВКАЗАНО ЩЕ" class="text-info">ЩЕ НЕ ВКАЗАНО</a></p>
+                    <p><strong>Telegram:</strong> <a href="https://t.me/Mister_Nihto" target="_blank" class="text-info">@Mister_Nihto</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:matviiv.nazar2010@gmail.com" class="text-info">matviiv.nazar2010@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -118,13 +89,19 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Привіт! Мене звати Назар, я захоплююсь відеоіграми та створюю цей сайт, щоб ділитися цікавою інформацією про них.</p>
-                    <p>Моя мета — зробити геймерську спільноту ще цікавішою та дружнішою!</p>
-                    <p>Дякую, що завітали!</p>
+                    <p>Привіт! Мене звати Назар. Я захоплююсь відеоіграми і створив цей сайт, щоб ділитись цікавою інфою для геймерів.</p>
+                    <p>А ще хочу порадити сайт мого друга про ігри від Rockstar Games — заходь:</p>
+                    <p><a href="https://web-game-98.onrender.com/" target="_blank" class="btn btn-outline-warning">Сайт про Rockstar →</a></p>
+                    <p>Дякую, що завітали! ✌️</p>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Футер -->
+    <footer class="text-center py-4 mt-5 border-top">
+        <p class="mb-0">© 2025 Games Info. Усі права захищено.</p>
+    </footer>
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
