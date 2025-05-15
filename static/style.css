@@ -41,8 +41,21 @@ nav{
 
 
 
-
-
+.rockstar-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+.rockstar-banner img {
+    border-radius: 4px;
+}
 
 
 .btn-outline-light {
